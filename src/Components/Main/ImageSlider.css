@@ -1,0 +1,27 @@
+.img-slider{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+
+}
+
+.img-slider-button{
+    all: unset;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    cursor: pointer;
+}
+.img-slider-button:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.img-slider-button > *{
+    stroke:  rgb(245, 185, 185);;
+    fill: black;
+    width: 5rem;
+    height: 5rem;
+
+}
