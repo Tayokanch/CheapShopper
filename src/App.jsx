@@ -12,6 +12,8 @@ const MyContext = createContext();
 function App() {
 
   const [search, setSearch] = useState("");
+  const [products, setProducts] = useState([]);
+
 
   return (
     <>
@@ -19,6 +21,8 @@ function App() {
         value={{
           search,
           setSearch,
+          products,
+          setProducts
         }}
       >
         <Header />

@@ -1,3 +1,51 @@
 main{
+    width: 100%;
     overflow: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main > section:first-of-type{
+    max-width:"1200px";
+    width: "100%";
+    height: "300px";
+    padding-bottom: 30px;
+    margin: "0 auto";
+}
+
+main >section:nth-of-type(2){
+    width: 100%;
+    display:  grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+
+}
+main >section:nth-of-type(2) > .card-container{
+    width: 100%;
+    display: grid;
+    grid-template-rows:1fr 30px ;
+    border: solid 2px rgb(245, 185, 185);
+}
+main >section:nth-of-type(2) > .card{
+    width: 100%;
+    display: grid;
+    justify-content: start;
+}
+main >section:nth-of-type(2)> div img{
+    width: 100%;
+    object-fit: contain;
+    background-image: none;
+    mix-blend-mode: multiply;
+
+}
+
+.card-details{
+    display: grid;
+    grid-auto-flow: column;
+    text-align: start;
+}
+
+.card-container h3{
+    text-align: center;
+    color: cornflowerblue;
 }

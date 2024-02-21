@@ -1,7 +1,40 @@
+
+.promo_section{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    padding-top: 5px;
+   
+    
+}
+.promo_section > div{
+    flex: 1;
+}
+
+.image_container{
+    width: 100%;
+    height:100% ;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.image_container > h3{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:1.5rem;
+    color: rgb(35, 114, 110);
+    background-color: rgb(161, 206, 82);
+    padding: 5px;
+}
 .img-slider{
     object-fit: contain;
     width: 100%;
     height: 100%;
+    background-image: none;
+    mix-blend-mode: multiply;
+    filter: contrast(1);
 
 }
 
@@ -14,9 +47,7 @@
     padding: 1rem;
     cursor: pointer;
 }
-.img-slider-button:hover{
-    background-color: rgba(0,0,0,0.2);
-}
+
 
 .img-slider-button > *{
     stroke:  rgb(245, 185, 185);;
