@@ -19,23 +19,24 @@ header > figure > h3 {
     text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
 }
 header > .input-container {
-    height: 2rem;
+   display: grid;
+   grid-template-columns: auto 1fr;
+   height: 2rem;
 }
+header > .input-container > select {
+   height: 100%;
+   background-color: black;
+   color: rgb(245, 185, 185);
+   outline: none;
+   border: none;
+}
+
 header > .input-container > input {
    width: 80%;
    height: 100%;
    outline: none;
    border: none;
 }
-header > .input-container > button {
-    width: 10%;
-    height: 100%;
-    background-color: black;
-    color: rgb(245, 185, 185);
-
-    outline: none;
-    border: none;
- }
 
  header > .input-container ::placeholder {
     font-size: rem;

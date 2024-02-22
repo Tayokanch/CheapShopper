@@ -47,28 +47,24 @@ function Header() {
           <h3>CheapShopper</h3>
         </figure>
         <div className="input-container">
-          <button>
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
+          
+            <select
+              name="categories"
+              id="categories"
+              onChange={handleCategories}
+            >
+              <option value="">All</option>
+              <option value="jewelery">Jeweleries</option>
+              <option value="electronics">Electronics</option>
+              <option value="men's clothing">Men's Wear</option>
+              <option value="women's clothing">Women's Wear</option>
+            </select>
           <input
             type="text"
             name="search"
             placeholder="search"
             onChange={handleSearch}
           />
-          <button>
-            <select
-              name="categories"
-              id="categories"
-              onChange={handleCategories}
-            >
-              <option value="all">All</option>
-              <option value="jewelery">jeweleries</option>
-              <option value="electronics">Electronics</option>
-              <option value="men's clothing">Men's Wear</option>
-              <option value="women's clothing">Women's Wear</option>
-            </select>
-          </button>
         </div>
         <div className="signup-container">
           <p>

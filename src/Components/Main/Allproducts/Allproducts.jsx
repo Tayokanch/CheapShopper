@@ -21,9 +21,11 @@ const Allproducts = () => {
   }, [ProductCategory]);
 
   const fetchProduct = async () => {
-    
     if (ProductCategory) {
       url += `/category/${ProductCategory}`;
+    }
+    if (ProductCategory === "") {
+      url = "https://fakestoreapi.com/products";
     }
     try {
       const response = await fetch(url);
