@@ -22,7 +22,7 @@ header > .input-container {
     height: 2rem;
 }
 header > .input-container > input {
-   width: 90%;
+   width: 80%;
    height: 100%;
    outline: none;
    border: none;

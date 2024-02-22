@@ -6,7 +6,6 @@ main{
     background-size: cover;
 }
 main > section:first-of-type{
-    max-width:"1200px";
     width: "100%";
     height: "300px";
     padding-bottom: 30px;
@@ -17,15 +16,28 @@ main >section:nth-of-type(2){
     width: 100%;
     display:  grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
     padding: 20px;
-
+    
 }
+
+
 main >section:nth-of-type(2) > .card-container{
-    width: 100%;
+    width: 250px;
+    margin: 0 auto;
     display: grid;
     grid-template-rows:1fr 30px ;
-    border: solid 2px rgb(245, 185, 185);
+    border: solid 2px rgb(33, 150, 150);
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+
 }
+
+main >section:nth-of-type(2) > .card-container:hover{
+    background-color:rgba(255, 255, 255, 0.419);
+}
+
 main >section:nth-of-type(2) > .card{
     width: 100%;
     display: grid;
@@ -41,11 +53,42 @@ main >section:nth-of-type(2)> div img{
 
 .card-details{
     display: grid;
-    grid-auto-flow: column;
-    text-align: start;
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+
 }
 
+.price{
+    background-color: rgb(245, 185, 185) ;
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+}
+.price:hover{
+color: rgb(245, 185, 185) ;
+background-color: #000000;
+cursor: pointer;
+
+
+}
 .card-container h3{
     text-align: center;
     color: cornflowerblue;
+    padding: 10px 0;
 }
+
+.card-container h3:hover{
+    cursor: pointer;
+    color: rgb(230, 50, 50);
+
+}
+
+@media only screen and (max-width: 600px) {
+    main >section:nth-of-type(2) > .card-container{
+        width: 100%;
+  
+    
+    }
+  }

@@ -2,21 +2,31 @@ import { useState, useEffect, useContext } from "react";
 import { MyContext } from "../../../App";
 
 const Allproducts = () => {
-  const { products, setProducts } = useContext(MyContext);
+  let url = "https://fakestoreapi.com/products";
+  const { products, setProducts, search, ProductCategory, setSearch } =
+    useContext(MyContext);
 
   useEffect(() => {
     fetchProduct();
   }, []);
 
   useEffect(() => {
-    if (products) {
-      console.log("this is product from data component", products);
+    if (search === "") {
+      fetchProduct();
     }
-  }, [products]); // This useEffect runs every time product changes
+  }, [search]);
+
+  useEffect(() => {
+    fetchProduct();
+  }, [ProductCategory]);
 
   const fetchProduct = async () => {
+    
+    if (ProductCategory) {
+      url += `/category/${ProductCategory}`;
+    }
     try {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error("failed to fetch product");
       }
@@ -28,7 +38,7 @@ const Allproducts = () => {
   };
 
   return products?.map((product, index) => {
-    const shortenedTitle = product?.title.substring(0, 15);
+    const shortenedTitle = product?.title.substring(0, 20).concat("...");
 
     return (
       <div className="card-container">
@@ -37,9 +47,9 @@ const Allproducts = () => {
         </div>
         <div className="card-details">
           <p>{shortenedTitle}</p>
-          <p>{`£${product?.price}`}</p>
+          <p className="price">{`£${product?.price}`}</p>
         </div>
-          <h3>Shop now</h3>
+        <h3>Shop now</h3>
       </div>
     );
   });

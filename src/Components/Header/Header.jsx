@@ -2,22 +2,44 @@ import "../Header/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { useState, useEffect, useContext} from "react";
-import {MyContext} from "../../App"
+import { useState, useEffect, useContext } from "react";
+import { MyContext } from "../../App";
 
 function Header() {
+  const {
+    search,
+    setSearch,
+    products,
+    setProducts,
+    ProductCategory,
+    setProductCategory,
+  } = useContext(MyContext);
 
-  const {search, setSearch}= useContext(MyContext)
+  const [newProduct, setNewproduct] = useState([]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
     console.log(search);
   };
 
-  const handleFetch = () =>
-    useEffect(() => {
-      console.log(search);
-    }, [search]);
+  const searchProduct = () => {
+    const foundProduct = products?.filter((product) =>
+      product?.title?.toLowerCase().includes(search.toLowerCase())
+    );
+    if (foundProduct) {
+      setProducts(foundProduct);
+      console.log("this is the searchedProducts", foundProduct);
+    }
+  };
+
+  const handleCategories = (e) => {
+    setProductCategory(e.target.value);
+    console.log("this is product category", ProductCategory);
+  };
+
+  useEffect(() => {
+    searchProduct();
+  }, [search]);
   return (
     <>
       <header>
@@ -25,6 +47,9 @@ function Header() {
           <h3>CheapShopper</h3>
         </figure>
         <div className="input-container">
+          <button>
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
           <input
             type="text"
             name="search"
@@ -32,7 +57,17 @@ function Header() {
             onChange={handleSearch}
           />
           <button>
-            <FontAwesomeIcon icon={faSearch} />
+            <select
+              name="categories"
+              id="categories"
+              onChange={handleCategories}
+            >
+              <option value="all">All</option>
+              <option value="jewelery">jeweleries</option>
+              <option value="electronics">Electronics</option>
+              <option value="men's clothing">Men's Wear</option>
+              <option value="women's clothing">Women's Wear</option>
+            </select>
           </button>
         </div>
         <div className="signup-container">

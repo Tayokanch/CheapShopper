@@ -8,12 +8,10 @@ import Footer from "./Components/Footer/Footer";
 
 const MyContext = createContext();
 
-
 function App() {
-
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
-
+  const [ProductCategory, setProductCategory] = useState("");
 
   return (
     <>
@@ -22,7 +20,9 @@ function App() {
           search,
           setSearch,
           products,
-          setProducts
+          setProducts,
+          ProductCategory,
+          setProductCategory
         }}
       >
         <Header />
@@ -33,4 +33,4 @@ function App() {
   );
 }
 
-export  {App, MyContext}
+export { App, MyContext };
