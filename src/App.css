@@ -13,8 +13,8 @@
 
 #root{
   background-color: hsla(207, 24%, 84%, 0.77);
+  width: 100%;
   display: grid;
-  height: 100vh;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr 100px;
 }
