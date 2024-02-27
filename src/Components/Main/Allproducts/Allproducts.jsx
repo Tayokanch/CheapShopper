@@ -51,6 +51,7 @@ const Allproducts = () => {
           <p>{shortenedTitle}</p>
           <p className="price">{`£${product?.price}`}</p>
         </div>
+        <p>Hello</p>
         <h3>Shop now</h3>
       </div>
     );
